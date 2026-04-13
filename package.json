@@ -1,0 +1,15 @@
+{
+  "name": "livekaraoke-tracker",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "dev": "node --watch dist/server.js",
+    "start": "node dist/server.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^24.6.0",
+    "typescript": "^5.9.3"
+  }
+}
