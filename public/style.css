@@ -44,6 +44,10 @@ button {
   gap: 10px;
 }
 
+.config.inline {
+  grid-template-columns: 1fr;
+}
+
 .config span,
 .meta,
 .hint {
@@ -54,7 +58,9 @@ button {
 }
 
 textarea,
-.text {
+.text,
+select,
+input {
   width: 100%;
   border: 1px solid rgba(255, 209, 102, 0.4);
   background: rgba(255, 243, 221, 0.06);
@@ -68,6 +74,16 @@ textarea {
   font: 16px/1.4 "Courier New", monospace;
 }
 
+select {
+  padding: 14px;
+  font: 16px/1.2 "Courier New", monospace;
+}
+
+input {
+  padding: 14px;
+  font: 16px/1.2 "Courier New", monospace;
+}
+
 .hint {
   margin: 0 0 8px;
   opacity: 0.85;
@@ -77,6 +93,75 @@ textarea {
   display: grid;
   gap: 16px;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.lyrics {
+  display: grid;
+  gap: 8px;
+  margin: 0 0 16px;
+}
+
+.focus {
+  display: grid;
+  gap: 8px;
+  margin: 0 0 16px;
+  padding: 16px;
+  border: 2px solid rgba(255, 209, 102, 0.45);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.focus-title {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font: 700 11px/1.4 "Arial Black", sans-serif;
+  color: #ffcf8a;
+}
+
+.focus-line {
+  padding: 8px 12px;
+  border-left: 4px solid rgba(255, 209, 102, 0.35);
+  background: rgba(255, 243, 221, 0.06);
+  white-space: pre-wrap;
+}
+
+.focus-line.future {
+  border-left-color: rgba(255, 209, 102, 0.18);
+  opacity: 0.72;
+}
+
+.focus-meta {
+  margin: 0;
+  opacity: 0.85;
+}
+
+.lyric-line {
+  padding: 10px 12px;
+  border-left: 4px solid rgba(255, 209, 102, 0.25);
+  background: rgba(255, 255, 255, 0.04);
+  white-space: pre-wrap;
+}
+
+.lyric-line.active {
+  border-left-color: var(--window-color, #ffd166);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--window-color, #ffd166) 45%, transparent);
+}
+
+.lyric-badges {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.lyric-badge {
+  padding: 2px 8px;
+  border-radius: 999px;
+  font: 700 11px/1.4 "Arial Black", sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #120c0a;
+  background: var(--window-color, #ffd166);
 }
 
 .window {
@@ -90,6 +175,11 @@ textarea {
   font-size: 20px;
 }
 
+.window.active {
+  border-color: var(--window-color, #ffd166);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--window-color, #ffd166) 40%, transparent);
+}
+
 .text {
   min-height: 7lh;
   padding: 12px;
@@ -99,4 +189,12 @@ textarea {
 
 .partial {
   color: #ffd166;
+}
+
+.match {
+  min-height: 3lh;
+  padding: 12px;
+  border-left: 4px solid var(--window-color, #ffd166);
+  background: rgba(255, 243, 221, 0.06);
+  white-space: pre-wrap;
 }
